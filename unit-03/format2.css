@@ -1,0 +1,15 @@
+body {
+  background-color: yellow;
+  color: green;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  background-color: white;
+}
+
+h1 {
+  color: green;
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+}

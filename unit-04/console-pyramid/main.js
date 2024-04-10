@@ -1,18 +1,4 @@
 function drawConsolePyramid(height) {
-  const pyramid = createPyramidArray(height);
-
-  // pyramid.forEach((row) => {
-  //   // console.log(row);
-  //   row.forEach((element) => {
-  //     // console.log(element);
-  //     for (let i = 0; i < element; i++) {
-  //       console.log(printStars(element) + "\n");
-  //     }
-  //   });
-  // });
-}
-
-function createPyramidArray(height) {
   let num = "*";
   let spacerCount = height - 1;
 
@@ -33,3 +19,5 @@ drawConsolePyramid(5);
 drawConsolePyramid(7);
 drawConsolePyramid(8);
 drawConsolePyramid(2);
+drawConsolePyramid(15);
+drawConsolePyramid(55);

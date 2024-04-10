@@ -1,15 +1,13 @@
 function drawConsolePyramid(height) {
   let num = "*";
-  let spacerCount = height - 1;
 
   for (let i = 0; i < height; i++) {
     let spacer = "";
-    for (let j = 0; j < spacerCount; j++) {
+    for (let j = 0; j < height - i - 1; j++) {
       spacer += ` `;
     }
     console.log(`${spacer}${num}`);
     num += "**";
-    spacerCount--;
   }
 }
 

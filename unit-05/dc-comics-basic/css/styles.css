@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  background-color: cornflowerblue;
+  color: white;
+  text-align: center;
+}
+
+nav > a {
+  color: white;
+  text-decoration: none;
+  width: 25%;
+}
+
+header > img {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  width: 25%;
+  margin: 10px;
+}
+
+section > h2 {
+  background-color: cornflowerblue;
+  text-align: center;
+  color: white;
+}
+
+section > h2 > img {
+  width: 200px;
+}
+
+section > p {
+  font-size: 0.8em;
+}
+
+table {
+  width: 50%;
+}
+
+table > caption {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}

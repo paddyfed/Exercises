@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  background-color: cornflowerblue;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem 0.5rem;
+}
+
+nav > a {
+  color: white;
+  text-decoration: none;
+}
+
+header > img {
+  width: 100%;
+  max-height: 300px;
+}
+
+main {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+main > section {
+  width: 25%;
+}
+
+section > div {
+  background-color: cornflowerblue;
+  color: white;
+  text-align: center;
+}
+
+section > div > img {
+  max-width: 100%;
+  max-height: 250px;
+}
+
+section > p {
+  font-size: 0.7rem;
+}
+
+aside {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table > caption {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+table > thead {
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  font-weight: bold;
+}
+
+table > tbody > tr > td,
+table > thead > tr > td {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.5rem;
+}
+
+table > tbody > tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+footer {
+  background-color: cornflowerblue;
+  text-align: center;
+  color: white;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+footer > p.footer_heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

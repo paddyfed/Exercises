@@ -15,12 +15,18 @@ nav {
   text-align: center;
 }
 
-nav > a {
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav a {
   color: white;
   text-decoration: none;
 }
 
-header > img {
+header img {
   width: 100%;
   max-height: 300px;
 }
@@ -31,6 +37,32 @@ main {
   grid-template-rows: 1fr;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+  main {
+    display: block;
+  }
+
+  aside {
+    display: block;
+  }
+
+  table {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
 }
 
 section > div {
@@ -48,15 +80,10 @@ section > p {
   font-size: 0.7rem;
 }
 
-aside {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
-
 table {
   border: 1px solid #ccc;
   border-collapse: collapse;
+  width: 100%;
 }
 
 table > caption {

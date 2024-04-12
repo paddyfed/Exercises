@@ -9,29 +9,75 @@ html {
 
 nav {
   background-color: cornflowerblue;
-  display: flex;
-  justify-content: space-around;
   padding: 0.2rem 0.5rem;
 }
 
-nav > a {
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
   color: white;
   text-decoration: none;
 }
 
-header > img {
+header img {
   width: 100%;
   max-height: 300px;
 }
 
 main {
-  display: flex;
-  gap: 0.5rem;
   margin-top: 1rem;
 }
 
-main > section {
-  width: 25%;
+/* when the screen is small (less than 576px), remove the display flex and just have display block instead.
+This puts everything in their correct flow from the html */
+
+@media screen and (max-width: 576px) {
+  nav ul {
+    display: block;
+  }
+
+  main {
+    display: block;
+  }
+
+  main > section {
+    width: 100%;
+  }
+
+  aside {
+    display: block;
+  }
+
+  table {
+    margin-top: 1rem;
+  }
+}
+
+/* when the screen is bigger than 576px, use flexbox to show multiple columns side by side */
+
+@media screen and (min-width: 577px) {
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  main {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  main > section {
+    width: 25%;
+  }
+
+  aside {
+    display: flex;
+    gap: 0.5rem;
+  }
 }
 
 section > div {
@@ -50,9 +96,6 @@ section > p {
 }
 
 aside {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 0.5rem;
   margin-top: 1rem;
 }
 

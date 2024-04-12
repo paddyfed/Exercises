@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: cornflowerblue;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +12,7 @@ html {
 }
 
 nav {
-  background-color: cornflowerblue;
+  background-color: var(--main-bg-color);
   color: white;
   text-align: center;
   columns: 3;
@@ -40,7 +44,7 @@ main > aside {
 }
 
 section > div {
-  background-color: cornflowerblue;
+  background-color: var(--main-bg-color);
   text-align: center;
   color: white;
   margin: 0;
@@ -85,7 +89,7 @@ table > tbody > tr:nth-child(odd) {
 }
 
 footer {
-  background-color: cornflowerblue;
+  background-color: var(--main-bg-color);
   text-align: center;
   color: white;
   padding: 0.2rem;

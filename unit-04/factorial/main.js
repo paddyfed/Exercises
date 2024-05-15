@@ -8,7 +8,6 @@ const fac = (num) => {
 
 function factorial() {
   let number = 0;
-  let factorial = 1;
   let output = "";
 
   number = parseInt(prompt("Enter a number between 1 and 20:"));

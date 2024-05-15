@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation - 01</title>
+  </head>
+  <body>
+    <h1 id="header">Hello world</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis quae
+      nostrum laudantium repellat soluta quasi cum ab temporibus, laborum, error
+      facilis nisi, ipsum placeat veniam cupiditate consequuntur adipisci
+      quisquam explicabo?
+    </p>
+    <div><img src="https://placehold.co/600x400" alt="Placeholder" /></div>
+    <form>
+      <input type="text" id="this_name" value="Hello" />
+      <button type="button" id="submit_btn">Submit</button>
+    </form>
+    <script>
+      let fname = document.querySelector("#this_name");
+      let header = document.querySelector("#header");
+      let sbmit_button = document.querySelector("#submit_btn");
+
+      function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+      }
+
+      function clickEvent() {
+        // console.log(event);
+        const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+        console.log(rndCol);
+        document.body.style.backgroundColor = rndCol;
+        header.firstChild.textContent = fname.value;
+      }
+
+      sbmit_button.addEventListener("click", clickEvent);
+    </script>
+  </body>
+</html>

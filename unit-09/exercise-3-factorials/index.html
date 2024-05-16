@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3 Factorials</title>
+  </head>
+  <body>
+    <h1>Factorial Count Down</h1>
+    <hr />
+    <div id="results"></div>
+    <script>
+      const fac = (num) => {
+        let fac = 1;
+        for (let i = 1; i <= num; i++) {
+          fac *= i;
+        }
+        return fac;
+      };
+
+      function factorial() {
+        let number = 0;
+        let output = "";
+
+        number = parseInt(prompt("Enter a number between 1 and 20:"));
+
+        while (isNaN(number) || number < 1 || number > 20) {
+          number = parseInt(prompt("Please enter a number between 1 and 20:"));
+        }
+
+        for (let j = number; j >= 1; j--) {
+          output += `${j}! = ${fac(j)}<br>`;
+        }
+
+        console.log(output);
+
+        return output;
+      }
+
+      const resultsDiv = document.querySelector("#results");
+      resultsDiv.innerHTML = `<p>${factorial()}</p>`;
+    </script>
+  </body>
+</html>

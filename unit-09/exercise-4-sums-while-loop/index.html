@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 4 Sums While Loop</title>
+  </head>
+  <body>
+    <h1>SUMS Version 2</h1>
+    <div id="results"></div>
+    <script>
+      const inputNumbers = [];
+      let i = 0;
+      let promptNumber = 0;
+
+      while (promptNumber !== -1) {
+        promptNumber = parseInt(
+          prompt(`Enter number ${i + 1} (enter -1 to quit)`)
+        );
+        while (isNaN(promptNumber)) {
+          promptNumber = parseInt(
+            prompt(`Please enter a number for number ${i + 1}`)
+          );
+        }
+        if (promptNumber !== -1) {
+          inputNumbers.push(promptNumber);
+        }
+        i++;
+      }
+
+      const resultsDiv = document.querySelector("#results");
+      resultsDiv.innerHTML = `<p>The values entered were: ${printNumbers(
+        inputNumbers
+      )}</p><p>Number Count = ${inputNumbers.length}</p><p>Sum = ${sumNumbers(
+        inputNumbers
+      )}</p><p>Average = ${averageNumbers(inputNumbers)}</p>`;
+
+      function printNumbers(numbers) {
+        let returnValue = "";
+        for (let i = 0; i < numbers.length; i++) {
+          returnValue += numbers[i] + " ";
+        }
+        return returnValue;
+      }
+
+      function sumNumbers(numbers) {
+        let returnValue = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          returnValue += parseInt(numbers[i]);
+        }
+        return returnValue;
+      }
+
+      function averageNumbers(numbers) {
+        return sumNumbers(numbers) / numbers.length;
+      }
+    </script>
+  </body>
+</html>

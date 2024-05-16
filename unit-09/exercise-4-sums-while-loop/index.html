@@ -4,21 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercise 4 Sums While Loop</title>
+
+    <style>
+      body {
+        background-color: khaki;
+      }
+      table,
+      td {
+        border: 1px solid #ccc;
+      }
+
+      td {
+        padding: 0.2rem;
+      }
+
+      table {
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: blue;
+      }
+    </style>
   </head>
   <body>
     <h1>SUMS Version 2</h1>
+    <hr />
     <div id="results"></div>
+
     <script>
       const inputNumbers = [];
       let i = 0;
       let promptNumber = 0;
 
       while (promptNumber !== -1) {
-        promptNumber = parseInt(
+        promptNumber = parseFloat(
           prompt(`Enter number ${i + 1} (enter -1 to quit)`)
         );
         while (isNaN(promptNumber)) {
-          promptNumber = parseInt(
+          promptNumber = parseFloat(
             prompt(`Please enter a number for number ${i + 1}`)
           );
         }
@@ -29,16 +54,27 @@
       }
 
       const resultsDiv = document.querySelector("#results");
-      resultsDiv.innerHTML = `<p>The values entered were: ${printNumbers(
-        inputNumbers
-      )}</p><p>Number Count = ${inputNumbers.length}</p><p>Sum = ${sumNumbers(
+      resultsDiv.innerHTML = `<p>The numbers you entered were:</p>
+      <table>
+      <thead>
+        <tr>
+          <td>Count</td>
+          <td>Value</td>
+        </tr>
+      </thead>
+      <tbody>${printNumbers(inputNumbers)}
+        
+      </tbody>
+    </table>
+         
+      <p>Number Count = ${inputNumbers.length}</p><p>Sum = ${sumNumbers(
         inputNumbers
       )}</p><p>Average = ${averageNumbers(inputNumbers)}</p>`;
 
       function printNumbers(numbers) {
         let returnValue = "";
         for (let i = 0; i < numbers.length; i++) {
-          returnValue += numbers[i] + " ";
+          returnValue += `<tr><td>${i + 1}</td><td>${numbers[i]}</td></tr>`;
         }
         return returnValue;
       }
@@ -46,13 +82,13 @@
       function sumNumbers(numbers) {
         let returnValue = 0;
         for (let i = 0; i < numbers.length; i++) {
-          returnValue += parseInt(numbers[i]);
+          returnValue += parseFloat(numbers[i]);
         }
-        return returnValue;
+        return returnValue.toFixed(3);
       }
 
       function averageNumbers(numbers) {
-        return sumNumbers(numbers) / numbers.length;
+        return (sumNumbers(numbers) / numbers.length).toFixed(3);
       }
     </script>
   </body>

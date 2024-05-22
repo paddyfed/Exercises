@@ -45,15 +45,15 @@ para2.addEventListener("mouseout", () => {
 });
 
 // Add a "Delete" button after each paragraph that, when clicked, removes the paragraph from the DOM
-function deleteParagraph(paragraph) {
-  paragraph.parentNode.removeChild(paragraph);
-}
+// function deleteParagraph(paragraph) {
+//   paragraph.parentNode.removeChild(paragraph);
+// }
 
 paragraphs.forEach((paragraph) => {
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
   paragraph.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
-    deleteParagraph(paragraph);
+    paragraph.remove();
   });
 });

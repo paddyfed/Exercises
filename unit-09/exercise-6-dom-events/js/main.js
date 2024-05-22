@@ -8,6 +8,7 @@ const para2 = document.querySelector("#para2");
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
 const container = document.querySelector("#container");
+const paragraphs = document.querySelectorAll("p");
 
 // Create a function to change the text color of a paragraph
 function changeColor(paragraph) {
@@ -31,7 +32,28 @@ newPara.textContent =
 container.appendChild(newPara);
 
 // Add an event listener to para1 that changes the background color to yellow when clicked
+para1.addEventListener("click", () => {
+  para1.style.backgroundColor = "yellow";
+});
 
 // Add a "highlight" class to para2 when the user hovers over it, and remove the class when the user stops hovering
+para2.addEventListener("mouseover", () => {
+  para2.classList.add("highlight");
+});
+para2.addEventListener("mouseout", () => {
+  para2.classList.remove("highlight");
+});
 
 // Add a "Delete" button after each paragraph that, when clicked, removes the paragraph from the DOM
+function deleteParagraph(paragraph) {
+  paragraph.parentNode.removeChild(paragraph);
+}
+
+paragraphs.forEach((paragraph) => {
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  paragraph.appendChild(deleteButton);
+  deleteButton.addEventListener("click", () => {
+    deleteParagraph(paragraph);
+  });
+});

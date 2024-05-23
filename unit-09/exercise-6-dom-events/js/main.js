@@ -7,8 +7,10 @@ const para1 = document.querySelector("#para1");
 const para2 = document.querySelector("#para2");
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
+const deleteOkButton = document.querySelector("#deleteOkButton");
+const dialog = document.querySelector("#deleteConfirm");
 const container = document.querySelector("#container");
-const paragraphs = document.querySelectorAll("p");
+const paragraphs = document.querySelectorAll("p#para1,p#para2");
 
 // Create a function to change the text color of a paragraph
 function changeColor(paragraph) {
@@ -45,17 +47,17 @@ para2.addEventListener("mouseout", () => {
 });
 
 // Add a "Delete" button after each paragraph that, when clicked, removes the paragraph from the DOM
-// function deleteParagraph(paragraph) {
-//   paragraph.parentNode.removeChild(paragraph);
-// }
 
 paragraphs.forEach((paragraph) => {
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
   paragraph.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
-    if (window.confirm("Are you sure you want to delete?")) {
+    dialog.showModal();
+    deleteOkButton.addEventListener("click", () => {
       paragraph.remove();
-    }
+    });
   });
 });
+
+// return result;

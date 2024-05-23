@@ -39,3 +39,8 @@ button:hover {
 .highlight {
   background-color: red;
 }
+
+dialog {
+  width: 50vw;
+  height: 20vh;
+}

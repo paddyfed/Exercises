@@ -18,9 +18,15 @@
     </div>
     <dialog id="deleteConfirm">
       <form method="dialog">
-        <p>Are you sure you want to delete?</p>
-        <button value="ok" id="deleteOkButton">OK</button>
-        <button value="cancel" id="deleteCancelButton">Cancel</button>
+        <div>
+          <p>Are you sure you want to delete?</p>
+          <span>
+            <button value="delete" class="deleteButton" id="deleteButton">
+              Delete
+            </button>
+            <button value="cancel" id="deleteCancelButton">Cancel</button>
+          </span>
+        </div>
       </form>
     </dialog>
 

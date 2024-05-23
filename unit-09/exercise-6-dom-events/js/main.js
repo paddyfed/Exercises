@@ -7,7 +7,7 @@ const para1 = document.querySelector("#para1");
 const para2 = document.querySelector("#para2");
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
-const deleteOkButton = document.querySelector("#deleteOkButton");
+const deleteOkButton = document.querySelector("#deleteButton");
 const dialog = document.querySelector("#deleteConfirm");
 const container = document.querySelector("#container");
 const paragraphs = document.querySelectorAll("p#para1,p#para2");
@@ -51,6 +51,7 @@ para2.addEventListener("mouseout", () => {
 paragraphs.forEach((paragraph) => {
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
+  deleteButton.classList.add("deleteButton");
   paragraph.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
     dialog.showModal();

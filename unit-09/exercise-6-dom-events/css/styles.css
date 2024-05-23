@@ -12,7 +12,7 @@ p {
 }
 
 button {
-  background-color: #4caf50;
+  background-color: hsl(122, 39%, 50%);
   color: white;
   padding: 10px;
   border: none;
@@ -21,7 +21,7 @@ button {
 }
 
 button:hover {
-  background-color: #3e8e41;
+  background-color: hsl(122, 39%, 40%);
 }
 
 #para1,
@@ -37,10 +37,21 @@ button:hover {
 }
 
 .highlight {
-  background-color: red;
+  background-color: lightskyblue;
 }
 
-dialog {
+dialog div {
   width: 50vw;
-  height: 20vh;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  background-color: hsl(0, 39%, 50%);
+}
+
+.deleteButton:hover {
+  background-color: hsl(0, 39%, 40%);
 }

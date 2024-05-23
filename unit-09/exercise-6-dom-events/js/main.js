@@ -54,6 +54,8 @@ paragraphs.forEach((paragraph) => {
   deleteButton.textContent = "Delete";
   paragraph.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
-    paragraph.remove();
+    if (window.confirm("Are you sure you want to delete?")) {
+      paragraph.remove();
+    }
   });
 });

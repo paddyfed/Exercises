@@ -15,11 +15,10 @@ body {
 
 img {
   vertical-align: middle;
-  width: 100%;
 }
+
 .carousel-container {
-  width: 600px;
-  height: 400px;
+  width: 100%;
   position: relative;
   margin: 0 auto;
 }
@@ -73,8 +72,12 @@ img {
 }
 
 .slide {
-  position: absolute;
+  aspect-ratio: 2.5;
+  width: 100%;
   display: none;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {

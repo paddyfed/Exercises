@@ -3,7 +3,7 @@
 (() => {
   // globals
   const componentCarousel = document.querySelector(".component-carousel");
-  const navigationDots = componentCarousel.querySelectorAll(".navigation-dot");
+  let navigationDots = componentCarousel.querySelectorAll(".navigation-dot");
   const navigationButtons = componentCarousel.querySelectorAll(
     ".navigation-buttons > a"
   );
@@ -18,14 +18,36 @@
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
+
     for (let i = 0; i < navigationDots.length; i++) {
       navigationDots[i].className = navigationDots[i].className.replace(
         " active",
         ""
       );
     }
+
     slides[currentIndex].style.display = "block";
     navigationDots[currentIndex].className += " active";
+  }
+
+  function showNavigationDots() {
+    const navDotsContainer = document.querySelector(
+      ".navigation-dot-container"
+    );
+    for (let i = 0; i < slides.length; i++) {
+      const navDot = document.createElement("span");
+      navDot.classList.add("navigation-dot");
+      navDotsContainer.appendChild(navDot);
+    }
+
+    navigationDots = componentCarousel.querySelectorAll(".navigation-dot");
+
+    // for (let i = 0; i < navigationDots.length; i++) {
+    //   navigationDots[i].className = navigationDots[i].className.replace(
+    //     " active",
+    //     ""
+    //   );
+    // }
   }
 
   // named function expression
@@ -33,6 +55,7 @@
     Math.abs((currentIndex + increment) % slides.length);
 
   function initCarousel() {
+    showNavigationDots();
     showSlides(currentIndex);
     // add event handlers for navigation buttons
     navigationButtons.forEach((button) => {
@@ -40,14 +63,11 @@
         event.preventDefault();
         if (event.target.className === "next") {
           currentIndex = incrementIndex(1);
-          console.log("next", currentIndex);
         }
         if (event.target.className === "previous") {
           currentIndex === 0
             ? (currentIndex = slides.length - 1)
             : (currentIndex = incrementIndex(-1));
-
-          console.log("previous", currentIndex);
         }
         showSlides(currentIndex);
       });

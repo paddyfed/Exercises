@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Age Calculator</h1>
+      <form id="ageCalculatorForm" action="">
+        <label for="ageInput">When was your birthday?</label>
+        <input
+          type="date"
+          name="ageInput"
+          id="ageInput"
+          max="2024-06-12"
+          min="1900-01-01"
+          required
+        />
+
+        <input type="submit" value="Submit" id="submit" />
+        <p id="ageResultMessage"></p>
+      </form>
+    </section>
+    <script src="js/calculatedates.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1 Factorials</title>
+  </head>
+  <body>
+    <h1>Factorial of Numbers</h1>
+    <p>Display a range of Factorials</p>
+    <label for="factorailRange">Select a number between 1 and 20</label>
+    <input
+      type="range"
+      name="factorailRange"
+      min="1"
+      max="20"
+      id="factorailRange"
+      value="15"
+    />
+    <p id="info-message"></p>
+    <hr />
+    <div id="results"></div>
+    <script>
+      const fac = (num) => {
+        let fac = 1;
+        for (let i = 1; i <= num; i++) {
+          fac *= i;
+        }
+        return fac;
+      };
+
+      const factorialRangeInput = document.querySelector("input");
+      const infoMessageLabel = document.querySelector("#info-message");
+      console.log(factorialRangeInput);
+      factorialRangeInput.addEventListener("input", (event) => {
+        console.log(event.target.value);
+        resultsDiv.innerHTML = `<p>${factorial(event.target.value)}</p>`;
+        infoMessageLabel.innerHTML = displayInfoMessage(event.target.value);
+      });
+
+      function factorial(number) {
+        // let number = 1;
+        let output = "";
+
+        for (let j = number; j >= 1; j--) {
+          output += `${j}! = ${fac(j)}<br>`;
+        }
+        return output;
+      }
+
+      function displayInfoMessage(number) {
+        return `Factorials up to ${number}`;
+      }
+
+      const resultsDiv = document.querySelector("#results");
+      resultsDiv.innerHTML = `<p>${factorial(factorialRangeInput.value)}</p>`;
+      infoMessageLabel.innerHTML = displayInfoMessage(
+        factorialRangeInput.value
+      );
+    </script>
+  </body>
+</html>

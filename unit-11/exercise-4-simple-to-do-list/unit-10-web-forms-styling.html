@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/simple-to-do.js" defer></script>
+  </head>
+  <body>
+    <h2>Responsive Form</h2>
+    <table id="to-do-list">
+      <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th></th>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <section class="container">
+      <form id="to-do-list-form">
+        <div class="row">
+          <div class="col-25">
+            <label for="title">Title</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Enter title of item..."
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="description">Description</label>
+          </div>
+          <div class="col-75">
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Write something.."
+              style="height: 200px"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="priority">Priority</label>
+          </div>
+          <div class="col-75">
+            <select id="priority" name="priority">
+              <option value="high">High</option>
+              <option value="medium" selected>Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+        </div>
+
+        <br />
+        <div class="row">
+          <p id="errorMessage"></p>
+          <input type="reset" value="Clear" />
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
